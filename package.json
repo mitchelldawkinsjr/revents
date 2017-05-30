@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-bower": "0.0.10"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.0.0",
+    "convert-json-to-csv": "^1.0.0",
+    "laravel-elixir": "^3.0.0"
+  }
+}
