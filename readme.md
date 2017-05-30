@@ -1,5 +1,9 @@
 # Laravel Framework 5.1  Bootstrap 3 Starter Site
 
+
+[Live Site](https://www.events.revolutioncm.me) 
+
+
 ## Starter Site Features:
 * Laravel 5.1.x
 * Twitter Bootstrap 3.x
@@ -135,4 +139,4 @@ This is free software distributed under the terms of the MIT license
 <a name="feature7"></a>
 ## Additional information
 
-Inspired by and based on [andrew13's Laravel-4-Bootstrap-Starter-Site](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site)
+Based on  [mrakodol's Laravel-4-Bootstrap-Starter-Site](https://github.com/mrakodol/Laravel-5-Bootstrap-3-Starter-Site)
