@@ -23,15 +23,21 @@ Route::get('video/{id}', 'VideoController@show');
 Route::get('photo/{id}', 'PhotoController@show');
 Route::get('/redirect', 'SocialAuthController@redirect');
 Route::get('/callback', 'SocialAuthController@callback');
-
 Route::group(['middleware' => 'auth'], function()
 {
     Route::post('/join', 'ArticlesController@join');
+
 });
 
+/***************    Service Tracker routes  **********************************/
+Route::group(['prefix' => 'tracker', 'middleware' => 'auth'], function() {
+    # Admin Dashboard
+    Route::get('view', 'ServiceTrackerController@index');
+    Route::get('history', 'ServiceTrackerController@history');
+    Route::get('service/data', 'ServiceTrackerController@data');
+    Route::resource('service', 'ServiceTrackerController');
 
-// Registration Routes...
-//Route::get('auth/register', 'Auth\AuthController@getRegister');
+});
 
 
 Route::controllers([
@@ -86,6 +92,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('photo/{photo}/edit', 'Admin\PhotoController@edit');
     Route::get('photo/{photo}/delete', 'Admin\PhotoController@delete');
     Route::resource('photo', 'Admin\PhotoController');
+
+    #Service Tracker
+    Route::get('tracker/details', 'ServiceTrackerController@details');
+    Route::get('service/data', 'ServiceTrackerController@adminServiceData');
 
     # Users
     Route::get('user/data', 'Admin\UserController@data');

@@ -43,6 +43,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{url('admin/tracker/details')}}">
+                        <i class="fa fa-map-marker fa-fw"></i> Service Tracker
+                    </a>
+                </li>
+                <li>
                     <a href="{{url('admin/user')}}">
                         <i class="glyphicon glyphicon-user"></i> Users
                     </a>

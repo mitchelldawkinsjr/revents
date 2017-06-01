@@ -54,16 +54,24 @@ elixir(function(mix) {
         paths.bootswatch + '/bootstrap.css',
         paths.colorbox + '/example3/colorbox.css',
         paths.justifiedGallery + '/css/justifiedGallery.css',
+        paths.dataTables + '/css/dataTables.bootstrap.css',
+        paths.dataTablesBootstrap3Plugin + '/css/datatables-bootstrap3.css',
         'jquery.icalendar.css',
         'main.css',
     ], 'public/css/site.css');
 
     // Merge Site scripts.
     mix.scripts([
-        // paths.jquery + '/jquery.js',
         paths.bootstrap + '/js/bootstrap.js',
         paths.colorbox + '/jquery.colorbox.js',
+        paths.dataTables + '/js/jquery.dataTables.js',
+        paths.dataTables + '/js/dataTables.bootstrap.js',
+        paths.dataTablesBootstrap3Plugin + '/js/datatables-bootstrap3.js',
+        paths.datatablesResponsive + '/js/dataTables.responsive.js',
         paths.justifiedGallery + '/js/jquery.justifiedGallery.js',
+        'bootstrap-dataTables-paging.js',
+        'dataTables.bootstrap.js',
+        'datatables.fnReloadAjax.js',
         'jquery.icalendar.js',
         'jquery.icalendar.min.js',
         'jquery.icalendar.pack.js',
@@ -81,16 +89,12 @@ elixir(function(mix) {
         paths.dataTables + '/css/dataTables.bootstrap.css',
         paths.dataTablesBootstrap3Plugin + '/css/datatables-bootstrap3.css',
         paths.metisMenu + '/metisMenu.css',
-        // paths.summernote + '/summernote.css',
         paths.select2 + '/css/select2.css',
-        // paths.jqueryui + '/themes/base/jquery-ui.min.css',
         'sb-admin-2.css',
     ], 'public/css/admin.css');
 
     // Merge Admin scripts.
     mix.scripts([
-        // paths.jquery + '/jquery.js',
-        // paths.jqueryui + '/jquery-ui.js',
         paths.bootstrap + '/js/bootstrap.js',
         paths.colorbox + '/jquery.colorbox.js',
         paths.dataTables + '/js/jquery.dataTables.js',
@@ -98,7 +102,6 @@ elixir(function(mix) {
         paths.dataTablesBootstrap3Plugin + '/js/datatables-bootstrap3.js',
         paths.datatablesResponsive + '/js/dataTables.responsive.js',
         paths.metisMenu + '/metisMenu.js',
-        // paths.summernote + '/summernote.js',
         paths.select2 + '/js/select2.js',
         paths.jqueryMask + 'jquery.mask.js',
         'bootstrap-dataTables-paging.js',

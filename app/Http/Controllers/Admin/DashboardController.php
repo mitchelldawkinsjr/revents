@@ -3,9 +3,11 @@
 use App\Http\Controllers\AdminController;
 use App\Article;
 use App\ArticleCategory;
+use App\ServiceTrackerView;
 use App\User;
 use App\Photo;
 use App\PhotoAlbum;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends AdminController {
 
@@ -24,6 +26,11 @@ class DashboardController extends AdminController {
         $users = User::count();
         $photo = Photo::count();
         $photoalbum = PhotoAlbum::count();
-		return view('admin.dashboard.index',  compact('title','news','newscategory','photo','photoalbum','users'));
+        $totalHoursObj = DB::table('overall_service_tracker')
+            ->select('time', DB::raw('SUM(time) as time'))
+            ->get();
+        $totalHours = $totalHoursObj[0]->time;
+
+		return view('admin.dashboard.index',  compact('title','news','newscategory','photo','photoalbum','users','totalHours'));
 	}
 }

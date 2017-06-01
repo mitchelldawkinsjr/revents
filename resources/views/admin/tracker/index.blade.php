@@ -8,59 +8,63 @@
     <div class="page-header">
         <h3>
             Attendance
-        <div class="pull-right">
             <div class="pull-right">
-                <button id="csv" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> {{trans("Export to csv") }}</button>
+                <div class="pull-right">
+                    <button id="csv" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> {{trans("Export to csv") }}</button>
+                </div>
             </div>
-        </div>
         </h3>
     </div>
     <table id="table" class="table table-striped table-hover">
         <thead>
         <tr>
-            <th value="name">{{ trans("Name") }}</th>
-            <th>{{ trans("Email") }}</th>
-            <th>{{ trans("Phone") }}</th>
-            <th>{{ trans("Event") }}</th>
-            <th>{{ trans("Created") }}</th>
+            <th value="Name">{{ trans("User Name") }}</th>
+            <th value="Name">{{ trans("Organization Name") }}</th>
+            <th value="Date">{{ trans("Date") }}</th>
+            <th value="Hour">{{ trans("Hours") }}</th>
+            <th value="Description">{{ trans("Description") }}</th>
+            <th value="Created">{{ trans("Created") }}</th>
         </tr>
         </thead>
         <tbody></tbody>
     </table>
 
+
     <script>
         $('#csv').on('click',function(){
-            $.get("/admin/attendance/data", function( data ) {
-                JSONToCSVConvertor(data,'Attendance',true);
+            $.get("/admin/service/data", function( data ) {
+                JSONToCSVConvertor(data,'Service_Summary',true);
             });
         });
         function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
-            console.log('TEST');
             //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
             var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
             var CSV = '';
+
             //Set Report title in first row or line
             CSV += ReportTitle + '\r\n\n';
+            var row ='';
             //This condition will generate the Label/Header
             if (ShowLabel) {
-                var row = "";
-                //This loop will extract the label from 1st index of on array
+                var title = null;
                 for (var index in arrData.data) {
-                    var title=null;
-                    switch(index) {
+                    switch (index) {
                         case '0' :
-                            title = 'Name';
+                            title = 'User Name';
                             break;
                         case '1' :
-                            title = 'Email';
+                            title = 'Organization Name';
                             break;
                         case '2' :
-                            title = 'Phone';
+                            title = 'Date';
                             break;
                         case '3' :
-                            title = 'Event';
+                            title = 'Hours';
                             break;
                         case '4' :
+                            title = 'Description';
+                            break;
+                        case '5' :
                             title = 'Created';
                             break;
                         default:
@@ -69,6 +73,7 @@
                     //Now convert each value to string and comma-seprated
                     row += title + ',';
                 }
+
                 row = row.slice(0, -1);
                 //append Label row with line break
                 CSV += row + '\r\n';
@@ -115,11 +120,10 @@
             //this part will append the anchor tag and remove it after automatic click
             document.body.appendChild(link);
             link.click();
-            console.log(link.href);
-
             document.body.removeChild(link);
         }
     </script>
+
 @endsection
 
 {{-- Scripts --}}

@@ -8,7 +8,7 @@ body { font-family: "Open Sans", "Helvetica", sans-serif; font-size: 11px; color
 }
 
 .dropdown-menu {
-    background-color: rgba(0,0,0,0.2) !important;
+    background-color: rgba(0,0,0,0.7) !important;
 }
 
 
@@ -155,7 +155,7 @@ input { }
 
 .header-icon {
     display: inline-block;
-    overflow: auto;
+    /*overflow: auto;*/
     position: relative;
 
 }
@@ -167,7 +167,7 @@ input { }
 .header-icon i {
     position: absolute;
     /*font-size: 16px;*/
-    left: 38%;
+    /*left: 38%;*/
     top: -12px;
 }
 
@@ -1065,6 +1065,23 @@ input#date_end:focus {
     width: 140px;
 }
 
+.login-page textarea {
+    display: block;
+    width: 100%;
+    background: rgba(255,255,255,0.10);
+    height: 50px;
+    border: none;
+    margin-top: 13px;
+    border-radius: 0;
+    padding-left: 15px;
+    -webkit-appearance: none;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 1.75px;
+    color: #fff;
+}
+
 @media screen and (min-width: 600px) {
     .login-page .login-branding {
         width: 300px;
@@ -1594,7 +1611,7 @@ input.submit.register-submit:hover {
 
 
 /* ====== UNIVERSAL FOOTER ====== */
-#univ-footer { clear: both; padding: 30px 0px 40px; width: 100%; background: rgba(0,0,0,0.1); color: #767677; font-size: 11px; text-align: left; bottom: 0; }
+#univ-footer { clear: both; padding: 30px 0px 40px; width: 100%; background: rgba(0,0,0,0.1); color: #767677; font-size: 11px; text-align: left; bottom: 0;}
 #univ-footer a { text-decoration: none; color: #ccc;}
 #univ-footer a:hover { color: #fff;}
 .univ-ft-wrapper {width: 980px; padding: 0px; margin: 0 auto;}

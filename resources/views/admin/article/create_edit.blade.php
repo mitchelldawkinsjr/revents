@@ -8,7 +8,7 @@
 </ul>
 <!-- ./ tabs -->
 @if (isset($article))
-{!! Form::model($article, array('url' => url('admin/article') . '/' . $article->id, 'method' => 'put','id'=>'fupload', 'class' => 'bf', 'files'=> true)) !!}
+{!! Form::model($article, array('url' => url('admin/article') . '/' . $article->id, 'method' => 'put', 'id'=>'fupload', 'class' => 'bf', 'files'=> true)) !!}
 @else
 {!! Form::open(array('url' => url('admin/article'), 'method' => 'post', 'class' => 'bf','id'=>'fupload', 'files'=> true)) !!}
 @endif
