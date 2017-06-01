@@ -26,6 +26,7 @@ Route::get('/callback', 'SocialAuthController@callback');
 Route::group(['middleware' => 'auth'], function()
 {
     Route::post('/join', 'ArticlesController@join');
+    Route::get('/join', 'HomeController@index');
 
 });
 
