@@ -22,7 +22,10 @@ var paths = {
     'select2': vendors + '/select2/dist',
     'jqueryui':  vendors + '/jquery-ui',
     'jqueryMask':  vendors + '/jquery-mask-plugin/dist/',
-    'justifiedGallery':  vendors + '/Justified-Gallery/dist/'
+    'justifiedGallery':  vendors + '/Justified-Gallery/dist/',
+    'blob':  vendors + '/Blob.js/',
+    'fileSaver':  vendors + '/FileSaver/',
+    'ics':  vendors + '/ics.js/'
 };
 
 elixir.config.sourcemaps = false;
@@ -69,6 +72,9 @@ elixir(function(mix) {
         paths.dataTablesBootstrap3Plugin + '/js/datatables-bootstrap3.js',
         paths.datatablesResponsive + '/js/dataTables.responsive.js',
         paths.justifiedGallery + '/js/jquery.justifiedGallery.js',
+        paths.blob + '/Blob.js',
+        paths.fileSaver + '/FileSaver.js',
+        paths.ics + '/ics.js',
         'bootstrap-dataTables-paging.js',
         'dataTables.bootstrap.js',
         'datatables.fnReloadAjax.js',
