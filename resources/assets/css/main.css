@@ -521,6 +521,19 @@ input[type="password"] {
     }
 }
 
+@media(max-width: 375px){
+    .navbar-nav .open .dropdown-menu {
+        width:3200px;
+        left: -100px;
+    }
+}
+@media(max-width: 425px){
+    .navbar-nav .open .dropdown-menu {
+        width:3200px;
+        left: -48px;
+    }
+}
+
 #group_names {
     padding: 0;
 }
