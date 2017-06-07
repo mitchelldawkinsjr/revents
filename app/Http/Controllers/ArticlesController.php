@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Attendance;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use App\Http\Controllers\EmailController;
 
 class ArticlesController extends Controller {
 
@@ -29,6 +31,7 @@ class ArticlesController extends Controller {
     {
         $id = Input::get('article_id');
         $userId = Auth::id();
+        $user = new User();
 
         if(isset($id) && ($userId) )
         {
@@ -38,6 +41,9 @@ class ArticlesController extends Controller {
             $attend->save();
 
             $article = Article::find($id);
+
+            $email = new EmailController();
+            $email->sendEmail($user::find($userId),$article);
         }
 
         return view('pages.joined',compact('article'));
