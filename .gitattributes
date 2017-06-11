@@ -1,0 +1,4 @@
+vendor/* linguist-vendored
+public/* linguist-vendored
+bower_components/* linguist-vendored
+vendor/* linguist-documentation
